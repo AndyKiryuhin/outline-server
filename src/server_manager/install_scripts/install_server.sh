@@ -129,16 +129,7 @@ function verify_docker_installed() {
 }
 
 function verify_docker_running() {
-  local STDERR_OUTPUT
-  STDERR_OUTPUT="$(docker info 2>&1 >/dev/null)"
-  local -ir RET=$?
-  if (( RET == 0 )); then
-    return 0
-  elif [[ "${STDERR_OUTPUT}" == *"Is the docker daemon running"* ]]; then
-    start_docker
-    return
-  fi
-  return "${RET}"
+
 }
 
 function fetch() {
