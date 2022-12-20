@@ -125,19 +125,7 @@ function log_for_sentry() {
 
 # Check to see if docker is installed.
 function verify_docker_installed() {
-  if command_exists docker; then
-    return 0
-  fi
-  log_error "NOT INSTALLED"
-  if ! confirm "Would you like to install Docker? This will run 'curl https://get.docker.com/ | sh'."; then
-    exit 0
-  fi
-  if ! run_step "Installing Docker" install_docker; then
-    log_error "Docker installation failed, please visit https://docs.docker.com/install for instructions."
-    exit 1
-  fi
-  log_start_step "Verifying Docker installation"
-  command_exists docker
+ 
 }
 
 function verify_docker_running() {
