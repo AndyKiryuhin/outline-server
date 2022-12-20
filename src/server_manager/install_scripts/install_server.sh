@@ -124,13 +124,9 @@ function log_for_sentry() {
 }
 
 # Check to see if docker is installed.
-function verify_docker_installed() {
- : 
-}
+function verify_docker_installed(){ :; }
 
-function verify_docker_running() {
- :
-}
+function verify_docker_running(){ :; }
 
 function fetch() {
   curl --silent --show-error --fail "$@"
